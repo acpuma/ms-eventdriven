@@ -13,6 +13,9 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>ms-eventdriven</name>
     <description>ms-eventdriven</description>
+    <modules>
+        <module>twitter-to-kafka-service</module>
+    </modules>
     <properties>
         <java.version>17</java.version>
         <spring-boot.version>2.7.11</spring-boot.version>
@@ -33,6 +36,18 @@
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring-boot.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.twitter4j</groupId>
+                <artifactId>twitter4j-stream</artifactId>
+                <version>4.0.7</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.24</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
