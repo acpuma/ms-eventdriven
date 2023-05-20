@@ -30,6 +30,10 @@
         </dependency>
 
         <dependency>
+            <groupId>com.microservices.demo</groupId>
+            <artifactId>app-config-data</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
         </dependency>
@@ -37,12 +41,6 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
