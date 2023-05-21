@@ -25,6 +25,7 @@
         <httpclient.version>4.5.14</httpclient.version>
         <json.version>20220320</json.version>
         <project.version>0.0.1-SNAPSHOT</project.version>
+        <avro.version>1.11.1</avro.version>
     </properties>
     <packaging>pom</packaging>
 
@@ -71,6 +72,12 @@
                 <artifactId>lombok</artifactId>
                 <version>1.18.24</version>
                 <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro</artifactId>
+                <version>${avro.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
