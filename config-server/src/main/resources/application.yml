@@ -13,6 +13,9 @@ spring:
     config:
       server:
         git:
-          uri: file://Users/acpuma/code/ms-eventdriven/config-server-repository
+          uri: https://github.com/acpuma/ms-eventdriven.git
+          default-label: main
+          searchPaths:
+            - 'config-server-repository'
         clone-on-start: true
     fail-fast: true
