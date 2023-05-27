@@ -12,6 +12,7 @@ spring:
   cloud:
     config:
       server:
-        git: file://Users/acpuma/code/ms-eventdriven/config-server-repository
+        git:
+          uri: file://Users/acpuma/code/ms-eventdriven/config-server-repository
         clone-on-start: true
     fail-fast: true
