@@ -10,6 +10,7 @@ public class SecurityConfig {
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring()
                 .antMatchers("/encrypt/**")
-                .antMatchers("/decrypt/**");
+                .antMatchers("/decrypt/**")
+                .antMatchers("/actuator/**");
     }
 }
