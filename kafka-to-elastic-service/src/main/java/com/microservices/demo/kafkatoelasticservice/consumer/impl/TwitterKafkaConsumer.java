@@ -18,10 +18,12 @@ import java.util.List;
 @Service
 public class TwitterKafkaConsumer implements KafkaConsumer<Long, TwitterAvroModel> {
     private static final Logger log = LoggerFactory.getLogger(TwitterKafkaConsumer.class);
+
     private final KafkaListenerEndpointRegistry kafkaListenerEndpointRegistry;
     private final KafkaAdminClient kafkaAdminClient;
     private final KafkaConfigData kafkaConfigData;
 
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     public TwitterKafkaConsumer(KafkaListenerEndpointRegistry kafkaListenerEndpointRegistry,
                                 KafkaAdminClient kafkaAdminClient,
                                 KafkaConfigData kafkaConfigData) {
@@ -33,8 +35,8 @@ public class TwitterKafkaConsumer implements KafkaConsumer<Long, TwitterAvroMode
     @Override
     @KafkaListener(id = "twitterTopicListener", topics = "${kafka-config.topic-name}")
     public void receive(@Payload List<TwitterAvroModel> messages,
-                        @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) List<Integer> keys,
-                        @Header(KafkaHeaders.RECEIVED_PARTITION_ID) List<Integer> partitions,
+                        @Header(KafkaHeaders.RECEIVED_KEY) List<Integer> keys,
+                        @Header(KafkaHeaders.RECEIVED_PARTITION) List<Integer> partitions,
                         @Header(KafkaHeaders.OFFSET) List<Long> offsets) {
         log.info("{} number of message received with keys {}, partitions {} and offsets {}, " +
                         "sending it to elastic: Thread id {}",
