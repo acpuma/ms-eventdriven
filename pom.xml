@@ -23,6 +23,7 @@
         <module>kafka/kafka-consumer</module>
         <module>common-config</module>
         <module>config-server</module>
+        <module>kafka-to-elastic-service</module>
     </modules>
     <properties>
         <java.version>11</java.version>
@@ -88,6 +89,11 @@
             <dependency>
                 <groupId>com.microservices.demo</groupId>
                 <artifactId>kafka-producer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>kafka-consumer</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
